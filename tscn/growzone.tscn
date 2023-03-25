@@ -1,0 +1,255 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://code/growzone.gd" type="Script" id=1]
+[ext_resource path="res://asset/farmingTilesheetComplete (1).png" type="Texture" id=2]
+[ext_resource path="res://asset/MinimalUI/MinimalUI.tres" type="Theme" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 64, 112, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 176, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 160, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 144, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 128, 48, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 2 )
+region = Rect2( 112, 48, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 2 )
+region = Rect2( 96, 48, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "carrotgrow",
+"speed": 0.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "none",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "oniongrow",
+"speed": 0.0
+} ]
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 2 )
+region = Rect2( 192, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 2 )
+region = Rect2( 64, 48, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 2 )
+region = Rect2( 96, 64, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=12]
+animations = [ {
+"frames": [ SubResource( 11 ) ],
+"loop": true,
+"name": "1",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 15 ) ],
+"loop": true,
+"name": "2",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 16 ) ],
+"loop": true,
+"name": "3",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 2 )
+region = Rect2( 144, 48, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 2 )
+region = Rect2( 16, 64, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ SubResource( 13 ) ],
+"loop": true,
+"name": "1",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 17 ) ],
+"loop": true,
+"name": "2",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "3",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 2 )
+region = Rect2( 176, 80, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=19]
+animations = [ {
+"frames": [ SubResource( 18 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 2 )
+region = Rect2( 176, 80, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=21]
+animations = [ {
+"frames": [ SubResource( 20 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="growzone" type="StaticBody2D"]
+script = ExtResource( 1 )
+
+[node name="hoeland" type="AnimatedSprite" parent="."]
+position = Vector2( 58, 72 )
+frames = SubResource( 2 )
+
+[node name="plant" type="AnimatedSprite" parent="."]
+position = Vector2( -105, 118 )
+frames = SubResource( 10 )
+animation = "none"
+offset = Vector2( 163, -50 )
+
+[node name="carrottimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="oniontimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="Button" type="Button" parent="."]
+show_behind_parent = true
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 51.0
+margin_top = 65.0
+margin_right = 191.0
+margin_bottom = 205.0
+rect_scale = Vector2( 0.1, 0.1 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="board" type="ColorRect" parent="."]
+margin_left = 38.0
+margin_top = 13.0
+margin_right = 80.0
+margin_bottom = 58.0
+color = Color( 0.152941, 0.137255, 0.137255, 1 )
+
+[node name="Label" type="Label" parent="board"]
+margin_left = 2.0
+margin_top = 14.0
+margin_right = 20.0
+margin_bottom = 37.0
+theme = ExtResource( 3 )
+text = "99"
+
+[node name="icon1" type="AnimatedSprite" parent="board"]
+position = Vector2( 11, 13 )
+frames = SubResource( 12 )
+animation = "1"
+
+[node name="b1" type="Button" parent="board"]
+show_behind_parent = true
+margin_left = 4.0
+margin_top = 6.0
+margin_right = 144.0
+margin_bottom = 146.0
+rect_scale = Vector2( 0.1, 0.1 )
+
+[node name="Label2" type="Label" parent="board"]
+margin_left = 23.0
+margin_top = 14.0
+margin_right = 41.0
+margin_bottom = 37.0
+theme = ExtResource( 3 )
+text = "99"
+
+[node name="icon2" type="AnimatedSprite" parent="board"]
+position = Vector2( 31, 13 )
+frames = SubResource( 14 )
+animation = "1"
+
+[node name="b2" type="Button" parent="board"]
+show_behind_parent = true
+margin_left = 24.0
+margin_top = 6.0
+margin_right = 164.0
+margin_bottom = 146.0
+rect_scale = Vector2( 0.1, 0.1 )
+
+[node name="right" type="AnimatedSprite" parent="board"]
+position = Vector2( 33, 38 )
+rotation = -1.5603
+scale = Vector2( 1, 1 )
+frames = SubResource( 19 )
+
+[node name="right2" type="Button" parent="board"]
+show_behind_parent = true
+margin_left = 31.0
+margin_top = 35.0
+margin_right = 111.0
+margin_bottom = 115.0
+rect_scale = Vector2( 0.1, 0.1 )
+
+[node name="left" type="AnimatedSprite" parent="board"]
+position = Vector2( 11, 39 )
+rotation = 1.57207
+frames = SubResource( 21 )
+
+[node name="left2" type="Button" parent="board"]
+show_behind_parent = true
+margin_left = 5.0
+margin_top = 35.0
+margin_right = 85.0
+margin_bottom = 115.0
+rect_scale = Vector2( 0.1, 0.1 )
+
+[connection signal="timeout" from="carrottimer" to="." method="_on_carrottimer_timeout"]
+[connection signal="timeout" from="oniontimer" to="." method="_on_oniontimer_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="toggled" from="Button" to="." method="_on_Button_toggled"]
+[connection signal="pressed" from="board/b1" to="." method="_on_b1_pressed"]
+[connection signal="pressed" from="board/b2" to="." method="_on_b2_pressed"]
+[connection signal="pressed" from="board/right2" to="." method="_on_right2_pressed"]
+[connection signal="pressed" from="board/left2" to="." method="_on_left2_pressed"]
