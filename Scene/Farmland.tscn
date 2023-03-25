@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://asset/farmingTilesheetComplete (1).png" type="Texture" id=1]
+[ext_resource path="res://tscn/growzone.tscn" type="PackedScene" id=2]
 
 [sub_resource type="TileSet" id=1]
 0/name = "farmingTilesheetComplete (1).png 0"
@@ -705,3 +706,12 @@ tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -131058, 18, 0, -65522, 18, 0, 14, 18, 0, 16, -1610612735, 0, 65550, 18, 0, 65552, -1610612735, 0, 131086, 18, 0, 131088, -1610612735, 0, 196622, 18, 0, 196624, -1610612735, 0, 262158, 18, 0, 262160, -1610612735, 0, 393214, 0, 0, 393215, 1, 0, 327680, 1, 0, 327681, 1, 0, 327682, 1, 0, 327683, 1, 0, 327684, 1, 0, 327685, 1, 0, 327686, 1, 0, 327687, 1, 0, 327688, 1, 0, 327689, 1, 0, 327690, 1, 0, 327691, 1, 0, 327692, 1, 0, 327693, 1, 0, 327694, 1, 0, 327695, 1, 0, 327696, -1610612732, 0, 327697, 1, 0, 327698, 1, 0, 327699, 1, 0, 327700, 1, 0, 327701, 1, 0, 393230, 18, 0, 393232, -1610612735, 0, 458766, 18, 0, 458768, -1610612735, 0, 458769, 13, 0, 458770, 14, 0, 524302, 18, 0, 524304, -1610612735, 0, 524305, 12, 0, 524306, 15, 0, 589838, 18, 0, 589840, -1610612735, 0, 655374, 18, 0, 655376, -1610612735, 0, 720910, 18, 0, 720912, -1610612735, 0, 786446, 18, 0, 786448, -1610612735, 0, 851982, 18, 0, 851984, -1610612735, 0 )
+
+[node name="growzone" parent="." instance=ExtResource( 2 )]
+position = Vector2( -3, -34 )
+
+[node name="growzone2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 17, -34 )
+
+[node name="growzone3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 38, -34 )

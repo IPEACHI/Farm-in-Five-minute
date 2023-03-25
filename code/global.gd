@@ -2,7 +2,7 @@ extends Node
 
 
 
-var coin = 100
+var coin = 3
 var carrot = 0
 var carrotseed = 0
 var onion = 0

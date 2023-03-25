@@ -70,26 +70,31 @@ func _on_Button_pressed():
 	if plant_grown:
 			if plant == 1:
 				Global.carrot += 1
+				Global.coin += 5
 				plantgrowing = false
 				plant_grown = false
 				$plant.play("none")
 			if plant == 2:
 				Global.onion += 1
+				Global.coin += 7
 				plantgrowing = false
 				plant_grown = false
 				$plant.play("none")
 			if plant == 3:
 				Global.cabbage+=1
+				Global.coin += 10
 				plantgrowing = false
 				plant_grown = false
 				$plant.play("none")
 			if plant == 4:
 				Global.berry += 1
+				Global.coin += 15
 				plantgrowing = false
 				plant_grown = false
 				$plant.play("none")
 			if plant == 5:
 				Global.corn += 1
+				Global.coin += 20
 				plantgrowing = false
 				plant_grown = false
 				$plant.play("none")
@@ -212,3 +217,7 @@ func _on_right2_pressed():
 
 
 
+
+
+func _on_close_pressed():
+	$board.visible = false

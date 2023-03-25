@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://code/growzone.gd" type="Script" id=1]
 [ext_resource path="res://asset/farmingTilesheetComplete (1).png" type="Texture" id=2]
@@ -107,6 +107,18 @@ animations = [ {
 "loop": true,
 "name": "oniongrow",
 "speed": 0.0
+} ]
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 2 )
+region = Rect2( 32, 80, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=32]
+animations = [ {
+"frames": [ SubResource( 31 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
 } ]
 
 [sub_resource type="AtlasTexture" id=11]
@@ -230,11 +242,25 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 
 [node name="board" type="ColorRect" parent="."]
-margin_left = 38.0
-margin_top = 13.0
-margin_right = 80.0
-margin_bottom = 58.0
+visible = false
+margin_left = 5.0
+margin_top = 48.0
+margin_right = 47.0
+margin_bottom = 93.0
 color = Color( 0.152941, 0.137255, 0.137255, 1 )
+
+[node name="close" type="Button" parent="board"]
+show_behind_parent = true
+margin_left = 36.0
+margin_top = 2.0
+margin_right = 76.0
+margin_bottom = 42.0
+rect_scale = Vector2( 0.1, 0.1 )
+
+[node name="close2" type="AnimatedSprite" parent="board"]
+position = Vector2( 38, 4 )
+scale = Vector2( 0.65625, 0.65625 )
+frames = SubResource( 32 )
 
 [node name="Label" type="Label" parent="board"]
 margin_left = 2.0
@@ -312,6 +338,7 @@ rect_scale = Vector2( 0.1, 0.1 )
 [connection signal="timeout" from="corntimer" to="." method="_on_corntimer_timeout"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="toggled" from="Button" to="." method="_on_Button_toggled"]
+[connection signal="pressed" from="board/close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="board/b1" to="." method="_on_b1_pressed"]
 [connection signal="pressed" from="board/b2" to="." method="_on_b2_pressed"]
 [connection signal="pressed" from="board/right2" to="." method="_on_right2_pressed"]
