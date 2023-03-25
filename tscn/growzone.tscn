@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://code/growzone.gd" type="Script" id=1]
 [ext_resource path="res://asset/farmingTilesheetComplete (1).png" type="Texture" id=2]
@@ -16,6 +16,30 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 64, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 2 )
+region = Rect2( 192, 48, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 2 )
+region = Rect2( 176, 48, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 2 )
+region = Rect2( 48, 48, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 2 )
+region = Rect2( 32, 48, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 2 )
+region = Rect2( 16, 48, 16, 16 )
+
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 2 )
 region = Rect2( 176, 32, 16, 16 )
@@ -27,6 +51,18 @@ region = Rect2( 160, 32, 16, 16 )
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 2 )
 region = Rect2( 144, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 2 )
+region = Rect2( 80, 64, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 2 )
+region = Rect2( 64, 64, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 2 )
+region = Rect2( 48, 64, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 2 )
@@ -42,9 +78,24 @@ region = Rect2( 96, 48, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=10]
 animations = [ {
+"frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
+"loop": true,
+"name": "berrygrow",
+"speed": 0.0
+}, {
+"frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"loop": true,
+"name": "cabbagegrow",
+"speed": 0.0
+}, {
 "frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "carrotgrow",
+"speed": 0.0
+}, {
+"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ) ],
+"loop": true,
+"name": "corngrow",
 "speed": 0.0
 }, {
 "frames": [  ],
@@ -151,11 +202,20 @@ frames = SubResource( 10 )
 animation = "none"
 offset = Vector2( 163, -50 )
 
+[node name="oniontimer" type="Timer" parent="."]
+wait_time = 7.0
+
 [node name="carrottimer" type="Timer" parent="."]
 wait_time = 5.0
 
-[node name="oniontimer" type="Timer" parent="."]
-wait_time = 5.0
+[node name="cabbagetimer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="berrytimer" type="Timer" parent="."]
+wait_time = 15.0
+
+[node name="corntimer" type="Timer" parent="."]
+wait_time = 20.0
 
 [node name="Button" type="Button" parent="."]
 show_behind_parent = true
@@ -245,8 +305,11 @@ margin_right = 85.0
 margin_bottom = 115.0
 rect_scale = Vector2( 0.1, 0.1 )
 
-[connection signal="timeout" from="carrottimer" to="." method="_on_carrottimer_timeout"]
 [connection signal="timeout" from="oniontimer" to="." method="_on_oniontimer_timeout"]
+[connection signal="timeout" from="carrottimer" to="." method="_on_carrottimer_timeout"]
+[connection signal="timeout" from="cabbagetimer" to="." method="_on_cabbagetimer_timeout"]
+[connection signal="timeout" from="berrytimer" to="." method="_on_berrytimer_timeout"]
+[connection signal="timeout" from="corntimer" to="." method="_on_corntimer_timeout"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="toggled" from="Button" to="." method="_on_Button_toggled"]
 [connection signal="pressed" from="board/b1" to="." method="_on_b1_pressed"]
