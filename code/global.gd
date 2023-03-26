@@ -13,3 +13,6 @@ var cabbage = 0
 var cabbageseed = 0
 var corn = 0
 var cornseed = 0
+
+
+var farmlevel = 10

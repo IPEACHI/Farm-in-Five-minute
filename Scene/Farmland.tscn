@@ -711,22 +711,65 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -131058, 18, 0, -65522, 18, 0, 14, 18, 0, 16, -1610612735, 0, 65550, 18, 0, 65552, -1610612735, 0, 131086, 18, 0, 131088, -1610612735, 0, 196622, 18, 0, 196624, -1610612735, 0, 262158, 18, 0, 262160, -1610612735, 0, 393214, 0, 0, 393215, 1, 0, 327680, 1, 0, 327681, 1, 0, 327682, 1, 0, 327683, 1, 0, 327684, 1, 0, 327685, 1, 0, 327686, 1, 0, 327687, 1, 0, 327688, 1, 0, 327689, 1, 0, 327690, 1, 0, 327691, 1, 0, 327692, 1, 0, 327693, 1, 0, 327694, 1, 0, 327695, 1, 0, 327696, -1610612732, 0, 327697, 1, 0, 327698, 1, 0, 327699, 1, 0, 327700, 1, 0, 327701, 1, 0, 393230, 18, 0, 393232, -1610612735, 0, 458766, 18, 0, 458768, -1610612735, 0, 458769, 13, 0, 458770, 14, 0, 524302, 18, 0, 524304, -1610612735, 0, 524305, 12, 0, 524306, 15, 0, 589838, 18, 0, 589840, -1610612735, 0, 655374, 18, 0, 655376, -1610612735, 0, 720910, 18, 0, 720912, -1610612735, 0, 786446, 18, 0, 786448, -1610612735, 0, 851982, 18, 0, 851984, -1610612735, 0 )
 
-[node name="growzone" parent="." instance=ExtResource( 2 )]
-position = Vector2( -3, -34 )
+[node name="g1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, -32 )
 
-[node name="growzone2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 17, -34 )
+[node name="g2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 24, -32 )
 
-[node name="growzone3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 38, -34 )
+[node name="g3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 48, -32 )
+
+[node name="g4" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 72, -32 )
+
+[node name="g5" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 96, -32 )
+
+[node name="g6" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 120, -32 )
+
+[node name="g7" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 144, -32 )
+
+[node name="g8" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 0, -16 )
+
+[node name="g9" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 24, -16 )
+
+[node name="g10" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 48, -16 )
+
+[node name="g11" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 72, -16 )
+
+[node name="g12" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 96, -16 )
+
+[node name="g13" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 120, -16 )
+
+[node name="g14" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 144, -16 )
 
 [node name="Shop" parent="." instance=ExtResource( 3 )]
 
 [node name="Label" type="Label" parent="."]
-margin_left = 133.0
-margin_top = -4.0
-margin_right = 173.0
-margin_bottom = 19.0
+margin_left = 152.0
+margin_right = 192.0
+margin_bottom = 23.0
 theme = ExtResource( 4 )
 text = "time:"
 

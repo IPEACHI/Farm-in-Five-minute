@@ -173,12 +173,12 @@ func _on_oniontimer_timeout():
 		
 
 func _on_cabbagetimer_timeout():
-	var abbage_plant  = $plant
-	if abbage_plant.frame == 0:
-		abbage_plant.frame = 1
+	var cabbage_plant  = $plant
+	if cabbage_plant.frame == 0:
+		cabbage_plant.frame = 1
 		$cabbagetimer.start()
-	elif abbage_plant.frame == 1:
-		abbage_plant.frame = 2
+	elif cabbage_plant.frame == 1:
+		cabbage_plant.frame = 2
 		plant_grown = true
 
 
