@@ -112,16 +112,16 @@ func _on_b1_pressed():
 			Global.carrotseed -=1
 	if page == 2:
 		if Global.cabbageseed >=1:
-			plant = 1
+			plant = 3
 			plantgrowing = true
-			$carrottimer.start()
+			$cabbagetimer.start()
 			$plant.play("cabbagegrow")
 			Global.cabbageseed -=1	
 	if page == 3:
 		if Global.cornseed >=1:
-			plant = 1
+			plant = 5
 			plantgrowing = true
-			$carrottimer.start()
+			$corntimer.start()
 			$plant.play("corngrow")
 			Global.cornseed -=1	
 	
@@ -135,9 +135,9 @@ func _on_b2_pressed():
 			Global.onionseed -=1
 	if page == 2:
 		if Global.berryseed >=1:
-			plant = 1
+			plant = 4
 			plantgrowing = true
-			$carrottimer.start()
+			$berrytimer.start()
 			$plant.play("berrygrow")
 			Global.berryseed -=1
 	
@@ -176,7 +176,7 @@ func _on_cabbagetimer_timeout():
 	var abbage_plant  = $plant
 	if abbage_plant.frame == 0:
 		abbage_plant.frame = 1
-		$abbagetimer.start()
+		$cabbagetimer.start()
 	elif abbage_plant.frame == 1:
 		abbage_plant.frame = 2
 		plant_grown = true
@@ -186,7 +186,7 @@ func _on_berrytimer_timeout():
 	var berry_plant  = $plant
 	if berry_plant.frame == 0:
 		berry_plant.frame = 1
-		$oniontimer.start()
+		$berrytimer.start()
 	elif berry_plant.frame == 1:
 		berry_plant.frame = 2
 		plant_grown = true

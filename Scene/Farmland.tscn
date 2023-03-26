@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://asset/farmingTilesheetComplete (1).png" type="Texture" id=1]
 [ext_resource path="res://tscn/growzone.tscn" type="PackedScene" id=2]
 [ext_resource path="res://tscn/Shop.tscn" type="PackedScene" id=3]
+[ext_resource path="res://asset/MinimalUI/MinimalUI.tres" type="Theme" id=4]
+[ext_resource path="res://code/Farmland.gd" type="Script" id=5]
 
 [sub_resource type="TileSet" id=1]
 0/name = "farmingTilesheetComplete (1).png 0"
@@ -695,6 +697,7 @@
 28/z_index = 0
 
 [node name="Farm" type="Node2D"]
+script = ExtResource( 5 )
 
 [node name="background" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
@@ -718,4 +721,15 @@ position = Vector2( 17, -34 )
 position = Vector2( 38, -34 )
 
 [node name="Shop" parent="." instance=ExtResource( 3 )]
-position = Vector2( 209, 89 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 133.0
+margin_top = -4.0
+margin_right = 173.0
+margin_bottom = 19.0
+theme = ExtResource( 4 )
+text = "time:"
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

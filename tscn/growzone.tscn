@@ -307,7 +307,6 @@ rect_scale = Vector2( 0.1, 0.1 )
 [node name="right" type="AnimatedSprite" parent="board"]
 position = Vector2( 33, 38 )
 rotation = -1.5603
-scale = Vector2( 1, 1 )
 frames = SubResource( 19 )
 
 [node name="right2" type="Button" parent="board"]
