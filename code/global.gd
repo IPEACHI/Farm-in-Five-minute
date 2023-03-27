@@ -15,4 +15,7 @@ var corn = 0
 var cornseed = 0
 
 
+var score = 0
+
+
 var farmlevel = 1

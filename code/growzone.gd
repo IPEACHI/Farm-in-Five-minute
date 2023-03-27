@@ -67,34 +67,39 @@ func _process(delta):
 func _on_Button_pressed():
 	if plantgrowing == false: 
 		$board.visible = true
-	if plant_grown:
+	if plant_grown == true:
 			if plant == 1:
 				Global.carrot += 1
 				Global.coin += 5
+				Global.score += 1
 				plantgrowing = false
 				plant_grown = false
 				$plant.play("none")
 			if plant == 2:
 				Global.onion += 1
 				Global.coin += 7
+				Global.score += 2
 				plantgrowing = false
 				plant_grown = false
 				$plant.play("none")
 			if plant == 3:
 				Global.cabbage+=1
 				Global.coin += 10
+				Global.score += 3
 				plantgrowing = false
 				plant_grown = false
 				$plant.play("none")
 			if plant == 4:
 				Global.berry += 1
 				Global.coin += 15
+				Global.score += 4
 				plantgrowing = false
 				plant_grown = false
 				$plant.play("none")
 			if plant == 5:
 				Global.corn += 1
 				Global.coin += 20
+				Global.score += 5
 				plantgrowing = false
 				plant_grown = false
 				$plant.play("none")
@@ -156,9 +161,11 @@ func _on_carrottimer_timeout():
 	if carrot_plant.frame == 0:
 		carrot_plant.frame = 1
 		$carrottimer.start()
+
 	elif carrot_plant.frame == 1:
 		carrot_plant.frame = 2
 		plant_grown = true
+		$carrottimer.stop()
 
 
 func _on_oniontimer_timeout():
@@ -166,9 +173,11 @@ func _on_oniontimer_timeout():
 	if onion_plant.frame == 0:
 		onion_plant.frame = 1
 		$oniontimer.start()
+
 	elif onion_plant.frame == 1:
 		onion_plant.frame = 2
 		plant_grown = true
+		$oniontimer.stop()
 		
 		
 
@@ -177,9 +186,11 @@ func _on_cabbagetimer_timeout():
 	if cabbage_plant.frame == 0:
 		cabbage_plant.frame = 1
 		$cabbagetimer.start()
+
 	elif cabbage_plant.frame == 1:
 		cabbage_plant.frame = 2
 		plant_grown = true
+		$cabbagetimer.stop()
 
 
 func _on_berrytimer_timeout():
@@ -187,9 +198,11 @@ func _on_berrytimer_timeout():
 	if berry_plant.frame == 0:
 		berry_plant.frame = 1
 		$berrytimer.start()
+
 	elif berry_plant.frame == 1:
 		berry_plant.frame = 2
 		plant_grown = true
+		$berrytimer.stop()
 
 
 func _on_corntimer_timeout():
@@ -197,9 +210,11 @@ func _on_corntimer_timeout():
 	if corn_plant.frame == 0:
 		corn_plant.frame = 1
 		$corntimer.start()
+
 	elif corn_plant.frame == 1:
 		corn_plant.frame = 2
 		plant_grown = true
+		$corntimer.stop()
 	
 	
 	

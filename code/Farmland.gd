@@ -1,16 +1,22 @@
 extends Node2D
 
 onready var timer = get_node("Timer")
-var display = 300
+var display = 2
+
 
 func _ready():
 	timer.set_wait_time(1)
 	timer.start()
 
+
+
 func _physics_process(delta):
 	$Label.text = (str(display))
 	if display == 0:
 		timer.stop()
+
+		$Conclusion.visible = true
+
 		
 		
 	if Global.farmlevel >= 2:
@@ -47,3 +53,8 @@ func _physics_process(delta):
 		
 func _on_Timer_timeout():
 	display -=1
+
+
+func _on_Button_pressed():
+	get_tree().change_scene("res://tscn/Menu.tscn")
+
