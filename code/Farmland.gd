@@ -1,7 +1,7 @@
 extends Node2D
 
 onready var timer = get_node("Timer")
-var display = 2
+var display = 300
 
 
 func _ready():
