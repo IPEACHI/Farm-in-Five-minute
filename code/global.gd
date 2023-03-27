@@ -15,4 +15,4 @@ var corn = 0
 var cornseed = 0
 
 
-var farmlevel = 10
+var farmlevel = 1
