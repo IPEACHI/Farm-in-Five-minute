@@ -1,8 +1,11 @@
 extends Node2D
 
+
 func _ready():
+
 	Global.point += Global.score
 	Global.score = 0
+	
 
 
 func _physics_process(delta):
@@ -21,4 +24,9 @@ func _on_Button_pressed():
 
 
 func _on_Button2_pressed():
+	Global.save_game()
 	get_tree().change_scene("res://Scene/Menu.tscn")
+	
+
+	
+	

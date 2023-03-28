@@ -1,6 +1,7 @@
 extends StaticBody2D
 
 
+
 var plantgrowing = false 
 var plant_grown = false
 var plant = 0

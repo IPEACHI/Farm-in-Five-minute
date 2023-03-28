@@ -1,7 +1,7 @@
 extends Node2D
 
 onready var timer = get_node("Timer")
-var display = 300
+var display = 20
 
 
 func _ready():
@@ -14,6 +14,7 @@ func _ready():
 	Global.corn = 0 
 	Global.coin = 3
 	Global.score = 0
+	Global.load_game()
 
 
 
