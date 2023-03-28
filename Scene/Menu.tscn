@@ -2,7 +2,7 @@
 
 [ext_resource path="res://asset/MinimalUI/MinimalUI.tres" type="Theme" id=1]
 [ext_resource path="res://asset/farmingTilesheetComplete (1).png" type="Texture" id=2]
-[ext_resource path="res://tscn/Menu.gd" type="Script" id=3]
+[ext_resource path="res://code/Menu.gd" type="Script" id=3]
 
 [sub_resource type="TileSet" id=1]
 0/name = "farmingTilesheetComplete (1).png 0"

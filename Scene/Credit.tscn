@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://asset/MinimalUI/MinimalUI.tres" type="Theme" id=1]
+[ext_resource path="res://code/Credit.gd" type="Script" id=2]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 320.0
+margin_bottom = 192.0
+color = Color( 0.403922, 0.364706, 0.313726, 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 136.0
+margin_top = 8.0
+margin_right = 182.0
+margin_bottom = 31.0
+theme = ExtResource( 1 )
+text = "Credit"
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 72.0
+margin_top = 48.0
+margin_right = 252.0
+margin_bottom = 123.0
+theme = ExtResource( 1 )
+text = "Dev : Phutawan Subkert
+
+Art : josie makes stuff"
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 272.0
+margin_top = 168.0
+margin_right = 315.0
+margin_bottom = 191.0
+theme = ExtResource( 1 )
+text = "Menu"
+
+[node name="Button" type="Button" parent="."]
+show_behind_parent = true
+margin_left = 272.0
+margin_top = 168.0
+margin_right = 320.0
+margin_bottom = 188.0
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

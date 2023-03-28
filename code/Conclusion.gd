@@ -1,9 +1,5 @@
 extends Control
-var car =Global.carrot
-var cab = Global.cabbage
-var on = Global.onion
-var ber = Global.berry
-var corn = Global.corn
+
 
 
 
@@ -22,6 +18,7 @@ func _physics_process(delta):
 
 
 func _on_Button_pressed():
-	get_tree().change_scene("res://tscn/Menu.tscn")
+	get_tree().change_scene("res://Scene/Menu.tscn")
+
 
 

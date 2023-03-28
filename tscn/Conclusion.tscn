@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Conclusion.gd" type="Script" id=1]
+[ext_resource path="res://code/Conclusion.gd" type="Script" id=1]
 [ext_resource path="res://asset/MinimalUI/MinimalUI.tres" type="Theme" id=2]
 [ext_resource path="res://asset/farmingTilesheetComplete (1).png" type="Texture" id=3]
 

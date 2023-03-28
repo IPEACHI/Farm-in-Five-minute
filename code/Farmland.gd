@@ -7,6 +7,13 @@ var display = 300
 func _ready():
 	timer.set_wait_time(1)
 	timer.start()
+	Global.carrot = 0
+	Global.cabbage = 0
+	Global.onion = 0 
+	Global.berry = 0
+	Global.corn = 0 
+	Global.coin = 3
+	Global.score = 0
 
 
 
@@ -41,8 +48,7 @@ func _physics_process(delta):
 		$g13.visible = true	
 	if Global.farmlevel >= 12:
 		$g14.visible = true	
-	if Global.farmlevel >= 13:
-		$g15.visible = true	
+
 		
 		
 		
